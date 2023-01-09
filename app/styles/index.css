@@ -63,6 +63,7 @@
 
 .header .navegacion{
 display: flex;
+align-items: center;
 gap: 2rem;
 margin-top: 5rem;
 }
@@ -81,6 +82,10 @@ margin-top: 5rem;
     font-weight: 900;
     font-size: 1.4rem;
     padding: .5rem;
+}
+
+.header .navegacion img {
+width: 3rem;
 }
 
 .header .navegacion a:hover, 
@@ -110,6 +115,8 @@ margin-top: 5rem;
     gap: 2rem;
 } 
 
+
+
 @media (min-width:768px){
     .footer .navegacion {
         flex-direction: row;
@@ -122,6 +129,10 @@ margin-top: 5rem;
     font-size: 2.2rem;
     text-decoration: none;
     font-weight: 700;
+}
+
+.footer .navegacion a:last-of-type {
+    display: none;
 }
 
 .footer .copyright {
