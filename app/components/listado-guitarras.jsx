@@ -1,7 +1,6 @@
-import Guitarra from "./guitarra"
+import Guitarra from "./guitarra";
 
-
-export default function listadoGuitarras({guitarras}) {
+export default function listadoGuitarras({ guitarras }) {
   return (
     <>
       <h2 className="heading">Nuestra Colección</h2>
