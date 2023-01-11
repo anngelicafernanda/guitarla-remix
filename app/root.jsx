@@ -59,11 +59,27 @@ if (carrito.some(guitarraState =>  guitarraState.id === guitarra.id )){
 
 }
 
+const actualizarCantidad = guitarra => {
+  const carritoActualizado = carrito.map(guitarraState => {
+    if (guitarraState.id === guitarra.id) {
+      guitarraState.cantidad = guitarra.cantidad
+    }
+    return guitarraState
+  })
+  setCarrito(carritoActualizado)
+}
+
+const eliminarGuitarra = id => {
+  const carritoActualizado = carrito.filter(guitarraState => guitarraState.id !== id)
+  setCarrito(carritoActualizado)
+}
   return (
     <Document>
       <Outlet context={{
        agregarCarrito,
-       carrito
+       carrito,
+       actualizarCantidad,
+       eliminarGuitarra
       }}/>
     </Document>
   );

@@ -22,12 +22,22 @@ gap: 5rem;
     align-items: center;
     padding: 3rem 0;
     border-bottom: 1px solid gray;
-
+    position: relative;
 }
 
 .producto:last-of-type {
     border-bottom: none;
 }
+
+.select {
+    all: unset;
+    border: 1px solid gray;
+    text-align: center;
+    
+    width: 100%;
+    padding: .5rem;
+    border-radius: 1rem;
+    }
 
 .producto p {
     margin: 0 0 1rem 0;
@@ -44,7 +54,8 @@ font-weight: 700;
 font-size: 4.2rem;
 }
 
-.precio {
+.producto .precio {
+    margin-top: 2rem;
 font-weight: 700;
 color: var(--primary);
 }
@@ -59,4 +70,16 @@ padding: 3rem;
 border-radius: 1rem;
 position: sticky;
 top: 3rem;
+}
+
+.btn_eliminar {
+    all: unset;
+position: absolute;
+top: 3rem;
+right: 1rem;
+
+}
+
+.btn_eliminar:hover {
+    cursor: pointer;
 }
