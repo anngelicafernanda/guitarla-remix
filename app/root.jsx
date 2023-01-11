@@ -2,6 +2,7 @@ import { Meta, Links, Outlet, Scripts, LiveReload, useCatch, Link } from "@remix
 import styles from "~/styles/index.css";
 import Header from "~/components/header";
 import Footer from "~/components/footer";
+import { useState } from "react";
 
 export function meta() {
   return {
@@ -38,9 +39,32 @@ export function links() {
 }
 
 export default function App() {
+const [carrito, setCarrito] = useState([])
+
+const agregarCarrito = guitarra => {
+if (carrito.some(guitarraState =>  guitarraState.id === guitarra.id )){
+  //Iterar sobre el arreglo, e identificar el elemento duplicado
+  const carritoActualizado = carrito.map(guitarraState => {
+    if (guitarraState.id === guitarra.id) {
+      //reescribir la cantidad
+      guitarraState.cantidad = guitarra.cantidad
+    }
+    return guitarraState
+  })
+  setCarrito(carritoActualizado)
+} else {
+  //Registro nuevo, agregar al carrito
+  setCarrito([...carrito, guitarra])
+}
+
+}
+
   return (
     <Document>
-      <Outlet />
+      <Outlet context={{
+       agregarCarrito,
+       carrito
+      }}/>
     </Document>
   );
 }
